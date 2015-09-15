@@ -33,7 +33,7 @@ _Could we do some simple timing examples here?_
 #### How do I use `line_profiler` ?
 After you have installed the `line_profiler` module, to use it you need to add a decorator before each function you want the profiler to measure (_do we need to explain what a decorator is?_ ).
 
-Let's take a simple example, a program to calculate the first `n` prime numbers (this is saved as `primes.py`):
+Let's take a simple example, a script to calculate the first `n` prime numbers (this is saved as `primes.py`):
 
 ```
  def primes(n):
@@ -70,6 +70,52 @@ def primes (n):
 ...
 ```
 
-This tells the profiler to profile this function. If you have multiple functions in your program then add the `@profile` decorator in front of each of them.
+This tells the profiler to profile this function. If you have multiple functions in your script then add the `@profile` decorator in front of each of them.
 
 Save the file (as `primes.py`)
+
+To profile this `primes.py` script we now need to run the profiler and tell it to profile our decorated code.
+
+`kernprof -l -v primes.py`
+
+Here:
+`kernprof` is the profiler script
+The `-l` argument tells the profiler to recognise the `@profile` decorator and profile your code.
+The `-v` argument tells the profiler to display timing information when the script has finished running.
+
+If we do this, we should get an output on screeen that looks something like this:
+
+```
+Wrote profile results to primes.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 0.000245 s
+File: primes.py
+Function: primes at line 1
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     1                                           @profile
+     2                                           def primes(n):
+     3         1            8      8.0      3.3      if n==2:
+     4                                                   return [2]
+     5         1            2      2.0      0.8      elif n<2:
+     6                                                   return []
+     7
+     8         1           11     11.0      4.5      s=range(3,n+1,2)
+     9         1           36     36.0     14.7      mroot = n ** 0.5
+    10         1            2      2.0      0.8      half=(n+1)/2-1
+    11         1            1      1.0      0.4      i=0
+    12         1            1      1.0      0.4      m=3
+    13
+    14         5            8      1.6      3.3      while m <= mroot:
+    15         4            4      1.0      1.6          if s[i]:
+    16         3            4      1.3      1.6              j=(m*m-3)/2
+    17         3            4      1.3      1.6              s[j]=0
+    18        31           33      1.1     13.5              while j<half:
+    19        28           31      1.1     12.7                  s[j]=0
+    20        28           30      1.1     12.2                  j+=m
+    21         4            4      1.0      1.6          i=i+1
+    22         4            5      1.2      2.0          m=2*i+3
+    23        50           61      1.2     24.9      return [2]+[x for x in s if x]
+```
