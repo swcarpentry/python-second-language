@@ -35,7 +35,7 @@ After you have installed the `line_profiler` module, to use it you need to add a
 
 Let's take a simple example, a script to calculate the first `n` prime numbers (this is saved as `primes.py`):
 
-```
+``` python
  def primes(n):
      if n==2:
          return [2]
@@ -64,10 +64,10 @@ Let's take a simple example, a script to calculate the first `n` prime numbers (
 
 To profile the `primes` function, we need to add the `@profile` decorator before the function:
 
-```
+``` python
 @profile
 def primes (n):
-...
+    ...
 ```
 
 This tells the profiler to profile this function. If you have multiple functions in your script then add the `@profile` decorator in front of each of them.
