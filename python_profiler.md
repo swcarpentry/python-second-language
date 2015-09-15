@@ -27,14 +27,13 @@ If you are using a different Python distribution, the `line_profiler` package ca
 _Could we do some simple timing examples here?_
 
 #### What impact can I expect on my code?
- * Running a profiler will have an effect on the code- it usually slows it down
+* Running a profiler will have an effect on the code- it usually slows it down
+* Once I have run the profiler, I get some information that might help me understand where it is spending its time
 
- * Once I have run the profiler, I get some information that might help me understand where it is spending its time
+#### How do I use `line_profiler` ?
+After you have installed the `line_profiler` module, to use it you need to add a decorator before each function you want the profiler to measure (_do we need to explain what a decorator is?_ ).
 
- #### How do I use `line_profiler` ?
- After you have installed the `line_profiler` module, to use it you need to add a decorator before each function you want the profiler to measure (_do we need to explain what a decorator is?_ ).
-
- Let's take a simple example, a program to calculate the first `n` prime numbers (this is saved as `primes.py`):
+Let's take a simple example, a program to calculate the first `n` prime numbers (this is saved as `primes.py`):
 
 ```
  def primes(n):
@@ -63,11 +62,14 @@ _Could we do some simple timing examples here?_
  primes(100)
  ```
 
- To profile the `primes` function, we need to add the `@profile` decorator before the function:
+To profile the `primes` function, we need to add the `@profile` decorator before the function:
 
- ```
- @profile
- def primes (n):
- ...
- ```
- This tells the profiler to profile this function. If you have multiple functions in your program then add the `@profile` decorator in front of each of them.
+```
+@profile
+def primes (n):
+...
+```
+
+This tells the profiler to profile this function. If you have multiple functions in your program then add the `@profile` decorator in front of each of them.
+
+Save the file (as `primes.py`)
