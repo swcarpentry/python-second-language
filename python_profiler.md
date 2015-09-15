@@ -74,6 +74,10 @@ This tells the profiler to profile this function. If you have multiple functions
 
 Save the file (as `primes.py`)
 
+So before we run the profiler, let's take a look at the code and see where we think it is going to spend it's time.
+* On what lines will this script spend most of its time?
+* What about cumulatively? 
+
 To profile this `primes.py` script we now need to run the profiler and tell it to profile our decorated code.
 
 `kernprof -l -v primes.py`
