@@ -44,7 +44,7 @@ Let's take a simple example, a script to calculate the first `n` prime numbers (
 
      s=list(range(3,n+1,2))
      mroot = n ** 0.5
-     half=(n+1)/2-1
+     half=(n+1)//2-1
      i=0
      m=3
 
