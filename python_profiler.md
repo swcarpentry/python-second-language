@@ -123,3 +123,10 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     22         4            5      1.2      2.0          m=2*i+3
     23        50           61      1.2     24.9      return [2]+[x for x in s if x]
 ```
+#### Post-class assessment
+1. Please write two programs that each use a different method for calculating pi (this could involve extra research), OR write one program that uses two methods.
+2. Profile each method
+3. Determine a metric for efficiency
+4. Determine which method for pi is the most efficient in your example.
+
+An example python script is given in `profiling_pi.py`
