@@ -42,9 +42,9 @@ def primes(n):
     elif n<2:
         return []
 
-    s=range(3,n+1,2)
+    s=list(range(3,n+1,2))
     mroot = n ** 0.5
-    half=(n+1)/2-1
+    half=(n+1)//2-1
     i=0
     m=3
 
