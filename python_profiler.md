@@ -2,6 +2,17 @@
 
 ### Instructional design thoughts:
 * Do we need to explain why code might run slowly (example)?
+
+Kind of things that might slow down code include:
+1. Hitting memory limits 
+2. Accidentally looping through arrays you're already looping through - for example calling a procedure inside a loop to find something, and then having that procedure loop through the array to find it.
+3. Putting low-probability if-statements early in an if-else ladder
+4. Using if-else ladders where a switch/case statement might be better
+5. Calling procedures or using complex if-statements inside very large data loops
+6. Making variables inside loops instead of outside them, so they keep getting recreated.
+7. Reading and writing from the harddrive
+8. Using inefficient objects when an array might be better
+
 * Is it worth explaining that getting the algorithm right first might be a better approach (example)?
 * This lesson will work best if students already modularise their code
 
