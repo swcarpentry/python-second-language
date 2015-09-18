@@ -1,6 +1,9 @@
 ## Profiling your code in Python
 
 ### Instructional design thoughts:
+* Get it right first, then make it fast(er). 
+ 
+Students should already have covered test-driven development, which should result in correct code - there is no point in optimising code that doesn't do what you want it to!
 * Do we need to explain why code might run slowly (example)?
 
 Kind of things that might slow down code include:
@@ -14,6 +17,9 @@ Kind of things that might slow down code include:
 8. Using inefficient objects when an array might be better
 
 * Is it worth explaining that getting the algorithm right first might be a better approach (example)?
+
+Yes, it should certainly form part of the approach. Two steps before profiling would be to ensure you're getting the right answers, and through the most efficient approach (make coarse adjustments before the fine-tuning). Then go ahead and profile to find bottlenecks. This of course may be an iterative process which informs the best approach/algorithm.
+
 * This lesson will work best if students already modularise their code
 
 ### Getting ready
