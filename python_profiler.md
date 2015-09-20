@@ -7,6 +7,7 @@ Students should already have covered test-driven development, which should resul
 * Do we need to explain why code might run slowly (example)?
 
 Kind of things that might slow down code include:
+
 1. Hitting memory limits 
 2. Accidentally looping through arrays you're already looping through - for example calling a procedure inside a loop to find something, and then having that procedure loop through the array to find it.
 3. Putting low-probability if-statements early in an if-else ladder
