@@ -98,8 +98,9 @@ To profile the `primes` function, we need to add the `@profile` decorator before
 def primes (n):
     ...
 ```
+A decorator is a way of 'wrapping' a function so as to give it some additional capabilities. In this case, we are adding the ability to be profiled to the primes function.
 
-This tells the profiler to profile this function. If you have multiple functions in your script then add the `@profile` decorator in front of each of them.
+Here, the `@profile` decorator tells the profiler to profile this function. If you have multiple functions in your script then add the `@profile` decorator in front of each of them.
 
 Save the file (as `primes.py`)
 
