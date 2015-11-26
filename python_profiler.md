@@ -1,7 +1,7 @@
 ## Profiling your code in Python
 
 ### Instructional design thoughts:
-* Get it right first, then make it fast(er). 
+* Get it right first, then make it fast(er).
  
 Students should already have covered test-driven development, which should result in correct code - there is no point in optimising code that doesn't do what you want it to!
 * Do we need to explain why code might run slowly (example)?
@@ -156,13 +156,13 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 #### Simple improvement example
 
-There are many ways how to improve the efficiency of the code. We cover one simple step which improves the performance of square root function. On line 9 in the code we see that square root of n is executed by build-in power function:
+There are many ways to improve the efficiency of the code. Let's cover one simple step which will improve the performance of the square root function. On line 9 in the code, we see that square root of n is executed by the built-in power function:
 
 ``` python
 mroot = n ** 0.5
 ```
 
-From information provided by the profiler we see that this line of code consumes significant proportion of CPU time. We can replace this computation by 'sqrt()' function from 'math' library to see what effect it has on performance.
+From the information provided by the profiler we see that this line of code consumes a significant proportion of CPU time. We can replace this computation with the `sqrt()` function from the `math` library to see what effect it has on performance.
 
 ``` python
 import math
@@ -172,7 +172,7 @@ import math
 mroot = math.sqrt(n)
 ```
 
-##### Task: Replace the square root computation by 'sqrt()' function from 'math' library and compare the results from previous profiler run.
+##### Task: Replace the square root computation with the `sqrt()` function from the `math` library and compare the results from the previous profiler run.
 
 
 #### Post-class assessment
