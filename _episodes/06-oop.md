@@ -52,6 +52,7 @@ left = Counter()
 left.change()
 left.change()
 print('left after two changes:', left.get())
+
 right = Counter()
 right.change()
 print('right after one changes:', right.get())
@@ -108,11 +109,12 @@ def count_n(stepper, number):
         stepper.change()
 
 counter = Counter()
+count_n(stepper, 10)
+print('final value of counter is:', counter.get())
+
 wrapper = Wrapper(3)
-for (stepper, title) in [[counter, 'counter'],
-                         [wrapper, 'wrapper']]:
-    count_n(stepper, 10)
-    print('final value of', title, 'is:', stepper.get())
+count_n(wrapper, 10)
+print('final value of wrapper is:', counter.get())
 ~~~
 {: .python}
 
@@ -155,3 +157,34 @@ class NumPyArray(object):
         self.array[x, y] = val
 ~~~
 {: .python}
+
+* Still have to rewrite the existing code to use `.get` and `.set`
+  * But won't have to in future if we change array implementation again
+
+* But wait!
+  * We can teach our new array to use square bracket subscripts
+  * The expression `a[i]` is implemented by calling `a.__getitem__(i)`
+  * And `a[i] = val` is `a.__setitem__(i, val)`
+
+~~~
+class ListArray(object):
+
+    def __init__(self, N):
+        self.array = []
+        for i in range(N):
+            self.array.append([0] * N)
+
+    def __getitem__(self, loc):
+        x, y = loc[0], loc[1]
+        return self.array[x][y]
+
+    def set(self, x, y, val):
+        x, y = loc[0], loc[1]
+        self.array[x][y] = val
+~~~
+{: .python}
+
+* Get rid of `NumpyArray`
+
+* Modify main driver to take a string specifying how to create the array
+  * And *nothing else changes*
