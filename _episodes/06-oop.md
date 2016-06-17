@@ -29,7 +29,7 @@ keypoints:
   * Reality is more complex, but we'll go with this for now...
 
 ~~~
-class Counter(object):
+class Counter:
 
     def __init__(self):
         self.value = 0
@@ -68,7 +68,7 @@ right after one change: 1
 * Why bother?
 
 ~~~
-class Wrapper(object):
+class Wrapper:
 
     def __init__(self, limit):
         self.limit = limit
@@ -131,7 +131,7 @@ final value of wrapper is: 1
   * *Polymorphism*
 
 ~~~
-class ListArray(object):
+class ListArray:
 
     def __init__(self, N):
         self.array = []
@@ -145,7 +145,7 @@ class ListArray(object):
         self.array[x][y] = val
 
 
-class NumPyArray(object):
+class NumPyArray:
 
     def __init__(self, N):
         self.array = np.zeros((N, N))
@@ -167,7 +167,7 @@ class NumPyArray(object):
   * And `a[i] = val` is `a.__setitem__(i, val)`
 
 ~~~
-class ListArray(object):
+class ListArray:
 
     def __init__(self, N):
         self.array = []
