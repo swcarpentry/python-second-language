@@ -3,6 +3,7 @@ layout: page
 title: "Lesson Design"
 permalink: /design/
 ---
+
 ## Process Used
 
 This lesson was designed using the process described in the [Python gapminder lesson][gapminder].

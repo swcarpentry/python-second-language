@@ -32,6 +32,7 @@ keypoints:
 - "Use the `with` statement to avoid forgetting to close files."
 - "Write docstrings for functions so that interactive help will work for them."
 ---
+
 * Data
   * Basic data types are:
     * Integers
