@@ -158,8 +158,10 @@ class NumPyArray:
 ~~~
 {: .python}
 
-* Still have to rewrite the existing code to use `.get` and `.set`
-  * But won't have to in future if we change array implementation again
+* We can use one wherever we can use another
+  * Except for construction
+  * Still have to rewrite the existing code to use `.get` and `.set`
+    * But won't have to in future if we change array implementation again
 
 * But wait!
   * We can teach our new array to use square bracket subscripts
