@@ -50,9 +50,16 @@ concs + concs
 np.log(concs)
 concs[concs > 2]
 
-# Are these the same?  Think about how to ask this.
-slice1 = concs["CO2":"NO2"]
-slice2 = concs[0:2]
+# Consider the following two series:
+concs_1 = pd.Series([1.1, 2.3, 1.2, 3.5])
+concs_2 = pd.Series([1.1, 2.3, 1.2, 3.5],
+                  index = ["CO2", "CH4", "NO2", "O3"])
+
+# Which slices are equivalent?
+slice_a = concs_1[0:1]
+slice_b = concs_1[0:2]
+slice_c = concs_2["CO2":"NO2"]
+slice_d = concs_2[0:2]
 # Inclusive endpoints when slicing using indices
 
 # Construction using dictionaries, Note sorting
