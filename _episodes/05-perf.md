@@ -47,6 +47,7 @@ while not on_edge(last_filled):
     last_filled = select(candidates)          # will modify candidates
     fill_cell(last_filled)
 ~~~
+{: .python}
 
 * FIXME: profile
 
