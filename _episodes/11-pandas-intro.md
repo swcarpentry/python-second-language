@@ -10,21 +10,21 @@ keypoints:
 - "FIXME"
 ---
 
-This module draws heavily from and modifies [Introduction to Pandas](https://github.com/fonnesbeck/statistical-analysis-python-tutorial) by Chris Fonnesbeck, which is licensed under the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+This module draws heavily from and modifies [Introduction to Pandas][fonnesbeck-pandas] by Chris Fonnesbeck,
+which is licensed under the [Creative Commons Attribution 4.0 International License][cc-attribution].
 
 # Pandas
 
-
-```python
+~~~
 import pandas as pd
 import numpy as np
 from IPython.display import display
-```
+~~~
+{: .python}
 
-## Data structures
+## Data Structures
 
-
-```python
+~~~
 # Series, indexes
 concs = pd.Series([1.1, 2.3, 1.2, 3.5],)
 concs.values
@@ -71,10 +71,10 @@ concs = pd.Series(concs_dict)
 concs2 = pd.Series(concs_dict, index=["CO2", "CH4", "NO2", "H2O"])
 concs2.isnull()
 concs + concs2
-```
+~~~
+{: .python}
 
-
-```python
+~~~
 # DataFrames - Tabular data structures
 atmo = pd.DataFrame({"conc": [1.1, 2.3, 1.2, 3.5],
                      "weight":[44, 16, 46, 48],
@@ -96,14 +96,17 @@ atmo.ix[0:1]
 
 atmo.T
 atmo.index = atmo.formula
-```
+~~~
+{: .python}
 
 ## Real data
 
 FIXME - get some real data
 
+~~~
+FIXME
+~~~
+{: .python}
 
-```python
-
-```
-
+[cc-attribution]: http://creativecommons.org/licenses/by/4.0/
+[fonnesbeck-pandas]: https://github.com/fonnesbeck/statistical-analysis-python-tutorial

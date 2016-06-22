@@ -1,5 +1,5 @@
 ---
-title: "Images and visualization"
+title: "Images and Visualization"
 teaching: 0
 exercises: 0
 questions:
@@ -10,4 +10,4 @@ keypoints:
 - "FIXME"
 ---
 
-
+FIXME
