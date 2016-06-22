@@ -1,7 +1,9 @@
 ---
 title: "Wrap up"
-teaching: 15 Minutes
+teaching: 15
 exercises: 0
+questions:
+- "FIXME"
 objectives:
 - "Recap and provide directions for future learning"
 keypoints:
