@@ -6,7 +6,7 @@ permalink: /setup/
 # Requirements
 1. Python 3 - Jupyter notebook
 3. Text-editor/Shell
-4. Download/extracted [python-second-language.zip]
+4. Download/extracted [python-second-language.zip](../files/python-second-language-data.zip)
 
 ## 1. Installing Python3 and the Jupyter Notebook using Anaconda
 
@@ -81,5 +81,5 @@ text editor and command line window side-by-side.  You can do this by
 
 ## 3. Get class dataset
 The data we will be using is taken from the [EPA atmospheric greenhouse gases](https://www3.epa.gov/climatechange/science/indicators/ghg/ghg-concentrations.html) dataset.
-To obtain it, download and unzip the file [python-second-language-data.zip](python-second-language-data.zip).
+To obtain it, download and unzip the file [python-second-language-data.zip](../files/python-second-language-data.zip).
 In order to follow the presented material, you should create the jupyter notebook in the "data" directory.
