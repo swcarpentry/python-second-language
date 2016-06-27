@@ -10,13 +10,12 @@ keypoints:
 - "FIXME"
 ---
 
-
-This module draws heavily from and modifies [Introduction to Pandas](https://github.com/fonnesbeck/statistical-analysis-python-tutorial) by Chris Fonnesbeck, which is licensed under the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+This module draws heavily from and modifies [Introduction to Pandas][fonnesbeck-pandas] by Chris Fonnesbeck,
+which is licensed under the [Creative Commons Attribution 4.0 International License][cc-by].
 
 # Pandas
 
-
-```python
+~~~
 %matplotlib inline
 import matplotlib
 import matplotlib.pyplot as plt
@@ -24,12 +23,13 @@ matplotlib.style.use("ggplot")
 import pandas as pd
 import numpy as np
 from IPython.display import display
-```
+~~~
+{: .python}
 
 ## Data structures
 
 
-```python
+~~~
 # Series, indexes
 concs = pd.Series([1.1, 2.3, 1.2, 3.5],)
 concs.values
@@ -69,22 +69,20 @@ concs = pd.Series(concs_dict)
 concs2 = pd.Series(concs_dict, index=["CO2", "CH4", "NO2", "H2O"])
 concs2.isnull()
 concs + concs2
-```
+~~~
+{: .python}
 
+~~~
+CH4    4.6
+CO2    2.2
+H2O    NaN
+NO2    2.4
+O3     NaN
+dtype: float64
+~~~
+{: .output}
 
-
-
-    CH4    4.6
-    CO2    2.2
-    H2O    NaN
-    NO2    2.4
-    O3     NaN
-    dtype: float64
-
-
-
-
-```python
+~~~
 # DataFrames - Tabular data structures
 atmo = pd.DataFrame({"conc": [1.1, 2.3, 1.2, 3.5],
                      "weight":[44, 16, 46, 48],
@@ -106,12 +104,13 @@ atmo.ix[0:1]
 
 atmo.T
 atmo.index = atmo.formula
-```
+~~~
+{: .python}
 
 ## Real data
 
 
-```python
+~~~
 co2 = pd.read_csv("../data/atmo_CO2.csv")
 co2 = pd.read_csv("../data/atmo_CO2.csv", index_col = "Year")
 
@@ -124,23 +123,17 @@ co2 = co2.dropna(axis = 1, how = "all")
 
 #co2.plot(legend = False)
 co2.ix[:, co2.columns != "EPICADome"].plot(legend = False)
-```
+~~~
+{: .python}
 
 
-
-
-    <matplotlib.legend.Legend at 0x12a3c43c8>
-
-
-
+<matplotlib.legend.Legend at 0x12a3c43c8>
 
 ![png](../fig/pandas_6_1.png)
 
-
 ## Concatenation
 
-
-```python
+~~~
 co2.mean(axis=1)
 ch4 = pd.read_csv("../data/atmo_CH4.csv", index_col = "Year")
 n2o = pd.read_csv("../data/atmo_N2O.csv", index_col = "Year")
@@ -149,41 +142,31 @@ n2o = pd.read_csv("../data/atmo_N2O.csv", index_col = "Year")
 summary = pd.concat([chem.mean(axis=1) for chem in [co2, ch4, n2o]], axis=1)
 summary.columns = ["CO2", "CH4", "N2O"]
 summary.plot()
-```
+~~~
+{: .python}
 
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x134de4b70>
-
-
-
+<matplotlib.axes._subplots.AxesSubplot at 0x134de4b70>
 
 ![png](../fig/pandas_8_1.png)
 
+## Fill in Missing Data
 
-## Fill in missing data
-
-
-```python
+~~~
 summary = summary.fillna(method = "bfill")
 summary.plot()
-```
+~~~
+{: .python}
 
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x13b3b21d0>
-
-
-
+<matplotlib.axes._subplots.AxesSubplot at 0x13b3b21d0>
 
 ![png](../fig/pandas_10_1.png)
 
+## Writing to File
 
-## Writing to file
-
-
-```python
+~~~
 summary.to_csv("atmo_summary.csv")
-```
+~~~
+{: .python}
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[fonnesbeck-pandas]: https://github.com/fonnesbeck/statistical-analysis-python-tutorial

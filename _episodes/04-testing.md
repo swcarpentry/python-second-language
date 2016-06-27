@@ -33,7 +33,7 @@ keypoints:
   * error: something's broken in the test itself
 
 * Example
-  * The `closest` function from [an earlier episode]({{ site.github.url }}/02-basics/)
+  * The `closest` function from [an earlier episode]({{ site.root }}/02-basics/)
   * What are some useful tests?
 
 ~~~
