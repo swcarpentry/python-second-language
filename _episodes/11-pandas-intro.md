@@ -1,7 +1,7 @@
 ---
 title: "Pandas - Introduction"
-teaching: 0
-exercises: 0
+teaching: 35 minutes
+exercises: 10 minutes
 questions:
 - "How can I manage tabular data in python?"
 objectives:
