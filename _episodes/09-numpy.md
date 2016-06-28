@@ -15,6 +15,9 @@ keypoints:
 - for more complex plots, axes and figure objects can be created and explicitly manipulated
 ---
 
+This module includes and modifies certain elements of [CFD Python: 12 steps to Navier-Stokes][barba-12-steps-to-navier-stokes] by Lorena A. Barba,
+which is licensed under the [Creative Commons Attribution 3.0 International License][cc-by].
+
 # Array basics
 
 ## Construction/Accessing
@@ -333,3 +336,6 @@ ax.plot_surface(X, Y, conc_evolve_2d(100, 0.001, C, X, Y, a=1))
 {: .python}
 
 ![png](../fig/numpy_26_1.png)
+
+[cc-by]: https://creativecommons.org/licenses/by-nc-sa/3.0/
+[barba-12-steps-to-navier-stokes]: http://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/

@@ -5,13 +5,14 @@ exercises: 5
 questions:
 - "How can I do advanced statistics using Pandas?"
 objectives:
-- "FIXME"
+- "Learners will understand how to do basic statistics using DataFrame.describe"
+- "Learners will understand how to do basic OLS fitting using statsmodels"
 keypoints:
-- "FIXME"
+- "Automated statistics can be done on DataFrames using describe, corr, and cov"
+- "detailed OLS models can be constructed using statsmodels.api"
 ---
 
 ## Statistics and correlations
-
 
 ~~~
 temp = pd.read_csv("../data/temperature.csv", index_col = "Year")
@@ -22,27 +23,12 @@ temp_comp = temp_comp.dropna()
 temp_comp[["CO2", "Annual_Mean"]].plot(subplots=True)
 ~~~
 {: .python}
-
-
-
-
-    array([<matplotlib.axes._subplots.AxesSubplot object at 0x11f2475c0>,
-           <matplotlib.axes._subplots.AxesSubplot object at 0x1174eb7f0>], dtype=object)
-
-
-
-
 ![png](../fig/pandas_14_1.png)
-
-
 
 ~~~
 temp_comp.corr()
 ~~~
 {: .python}
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -88,16 +74,10 @@ temp_comp.corr()
 </table>
 </div>
 
-
-
-
 ~~~
 temp_comp.cov()
 ~~~
 {: .python}
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -143,16 +123,12 @@ temp_comp.cov()
 </table>
 </div>
 
-
-
-
 ~~~
 model = pd.ols(y = temp_comp["Annual_Mean"], x = temp_comp["CO2"])
 print(model.summary)
 ~~~
 {: .python}
 
-    
     -------------------------Summary of Regression Analysis-------------------------
     
     Formula: Y ~ <x> + <intercept>
@@ -177,26 +153,22 @@ print(model.summary)
     ---------------------------------End of Summary---------------------------------
     
 
-
     /Users/josephmontoya/anaconda/envs/py35/lib/python3.5/site-packages/IPython/core/interactiveshell.py:2885: FutureWarning: The pandas.stats.ols module is deprecated and will be removed in a future version. We refer to external packages like statsmodels, see some examples here: http://statsmodels.sourceforge.net/stable/regression.html
       exec(code_obj, self.user_global_ns, self.user_ns)
 
-
+* statsmodels module for OLS
+* OLS regression requires a column for each fitted coefficient
 
 ~~~
 import statsmodels.api as sm
 
 xdata = temp_comp.CO2
 xdata = sm.add_constant(xdata)
-#xdata = sm.add_constant(xdata)
 ydata = temp_comp.Annual_Mean
 model = sm.OLS(ydata, xdata).fit()
 model.summary()
 ~~~
 {: .python}
-
-
-
 
 <table class="simpletable">
 <caption>OLS Regression Results</caption>
@@ -254,26 +226,13 @@ model.summary()
 </tr>
 </table>
 
-
-
-
 ~~~
 temp_comp.plot(y = "Annual_Mean", x = "CO2", linestyle = '', marker = 'o')
 plt.plot(xdata, model.predict(xdata), 'k-')
 ~~~
 {: .python}
 
-
-
-
-    [<matplotlib.lines.Line2D at 0x11e578710>,
-     <matplotlib.lines.Line2D at 0x11e50e2b0>]
-
-
-
-
 ![png](../fig/pandas_19_1.png)
-
 
 ## Exercise: Do a OLS regression on a 3-parameter quadratic model
 
@@ -318,16 +277,5 @@ plt.plot(xdata, fit.predict(xdata), 'k-')
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
     [2] The condition number is large, 1.59e+07. This might indicate that there are
     strong multicollinearity or other numerical problems.
-
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x11d39a860>,
-     <matplotlib.lines.Line2D at 0x11e562a58>,
-     <matplotlib.lines.Line2D at 0x11e562278>]
-
-
-
 
 ![png](../fig/pandas_21_2.png)

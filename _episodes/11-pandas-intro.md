@@ -1,13 +1,18 @@
 ---
 title: "Pandas - Introduction"
-teaching: 35 minutes
-exercises: 10 minutes
+teaching: 35
+exercises: 10
 questions:
 - "How can I manage tabular data in python?"
 objectives:
-- "FIXME"
+- "Learners will understand how to read csv data into a Pandas DataFrame"
+- "Learners will understand how to manipulate and access data in a DataFrame"
+- "Learners will understand how to deal with missing and null data by dropping and using backfilling methods"
 keypoints:
-- "FIXME"
+- "Pandas DataFrames can be used to read and write tabular data in csv format in python"
+- "data in DataFrames are accessed using indices (row names) and (columns)"
+- "Series and DataFrames can be concatenated using pd.concat"
+- "Null data can be dropped or backfilled using DataFrame.dropna and DataFrame.fillna"
 ---
 
 This module draws heavily from and modifies [Introduction to Pandas][fonnesbeck-pandas] by Chris Fonnesbeck,
