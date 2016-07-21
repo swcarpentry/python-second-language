@@ -128,9 +128,11 @@ assert (np.array(make_array_list()) == make_array_numpy()).all()
 ~~~
 {: .python}
 
-    100 loops, best of 3: 3.04 ms per loop
-    10000 loops, best of 3: 73.1 µs per loop
-
+~~~
+100 loops, best of 3: 3.04 ms per loop
+10000 loops, best of 3: 73.1 µs per loop
+~~~
+{: .output}
 
 ## Meshgrids
 * Want to create an array corresponding to a single variable over a 2-D space

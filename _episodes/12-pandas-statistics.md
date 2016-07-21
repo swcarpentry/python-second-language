@@ -129,32 +129,35 @@ print(model.summary)
 ~~~
 {: .python}
 
-    -------------------------Summary of Regression Analysis-------------------------
-    
-    Formula: Y ~ <x> + <intercept>
-    
-    Number of Observations:         103
-    Number of Degrees of Freedom:   2
-    
-    R-squared:         0.8773
-    Adj R-squared:     0.8761
-    
-    Rmse:              0.1064
-    
-    F-stat (1, 101):   721.9861, p-value:     0.0000
-    
-    Degrees of Freedom: model 1, resid 101
-    
-    -----------------------Summary of Estimated Coefficients------------------------
-          Variable       Coef    Std Err     t-stat    p-value    CI 2.5%   CI 97.5%
-    --------------------------------------------------------------------------------
-                 x     0.0095     0.0004      26.87     0.0000     0.0088     0.0102
-         intercept    -3.0601     0.1167     -26.22     0.0000    -3.2888    -2.8314
-    ---------------------------------End of Summary---------------------------------
-    
+~~~
+-------------------------Summary of Regression Analysis-------------------------
 
-    /Users/josephmontoya/anaconda/envs/py35/lib/python3.5/site-packages/IPython/core/interactiveshell.py:2885: FutureWarning: The pandas.stats.ols module is deprecated and will be removed in a future version. We refer to external packages like statsmodels, see some examples here: http://statsmodels.sourceforge.net/stable/regression.html
-      exec(code_obj, self.user_global_ns, self.user_ns)
+Formula: Y ~ <x> + <intercept>
+
+Number of Observations:         103
+Number of Degrees of Freedom:   2
+
+R-squared:         0.8773
+Adj R-squared:     0.8761
+
+Rmse:              0.1064
+
+F-stat (1, 101):   721.9861, p-value:     0.0000
+
+Degrees of Freedom: model 1, resid 101
+
+-----------------------Summary of Estimated Coefficients------------------------
+      Variable       Coef    Std Err     t-stat    p-value    CI 2.5%   CI 97.5%
+--------------------------------------------------------------------------------
+             x     0.0095     0.0004      26.87     0.0000     0.0088     0.0102
+     intercept    -3.0601     0.1167     -26.22     0.0000    -3.2888    -2.8314
+---------------------------------End of Summary---------------------------------
+
+
+/Users/josephmontoya/anaconda/envs/py35/lib/python3.5/site-packages/IPython/core/interactiveshell.py:2885: FutureWarning: The pandas.stats.ols module is deprecated and will be removed in a future version. We refer to external packages like statsmodels, see some examples here: http://statsmodels.sourceforge.net/stable/regression.html
+  exec(code_obj, self.user_global_ns, self.user_ns)
+~~~
+{: .output}
 
 * statsmodels module for OLS
 * OLS regression requires a column for each fitted coefficient
@@ -249,33 +252,36 @@ plt.plot(xdata, fit.predict(xdata), 'k-')
 ~~~
 {: .python}
 
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:            Annual_Mean   R-squared:                       0.878
-    Model:                            OLS   Adj. R-squared:                  0.876
-    Method:                 Least Squares   F-statistic:                     361.3
-    Date:                Mon, 27 Jun 2016   Prob (F-statistic):           1.73e-46
-    Time:                        09:45:42   Log-Likelihood:                 86.147
-    No. Observations:                 103   AIC:                            -166.3
-    Df Residuals:                     100   BIC:                            -158.4
-    Df Model:                           2                                         
-    Covariance Type:            nonrobust                                         
-    ==============================================================================
-                     coef    std err          t      P>|t|      [95.0% Conf. Int.]
-    ------------------------------------------------------------------------------
-    const         -4.5277      1.499     -3.021      0.003        -7.502    -1.554
-    CO2            0.0182      0.009      2.049      0.043         0.001     0.036
-    CO2^2      -1.284e-05   1.31e-05     -0.982      0.328     -3.88e-05  1.31e-05
-    ==============================================================================
-    Omnibus:                        0.571   Durbin-Watson:                   1.130
-    Prob(Omnibus):                  0.752   Jarque-Bera (JB):                0.584
-    Skew:                          -0.173   Prob(JB):                        0.747
-    Kurtosis:                       2.871   Cond. No.                     1.59e+07
-    ==============================================================================
-    
-    Warnings:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    [2] The condition number is large, 1.59e+07. This might indicate that there are
-    strong multicollinearity or other numerical problems.
+~~~
+                        OLS Regression Results                            
+ ==============================================================================
+ Dep. Variable:            Annual_Mean   R-squared:                       0.878
+ Model:                            OLS   Adj. R-squared:                  0.876
+ Method:                 Least Squares   F-statistic:                     361.3
+ Date:                Mon, 27 Jun 2016   Prob (F-statistic):           1.73e-46
+ Time:                        09:45:42   Log-Likelihood:                 86.147
+ No. Observations:                 103   AIC:                            -166.3
+ Df Residuals:                     100   BIC:                            -158.4
+ Df Model:                           2                                         
+ Covariance Type:            nonrobust                                         
+ ==============================================================================
+             coef    std err          t      P>|t|      [95.0% Conf. Int.]
+ ------------------------------------------------------------------------------
+ const         -4.5277      1.499     -3.021      0.003        -7.502    -1.554
+ CO2            0.0182      0.009      2.049      0.043         0.001     0.036
+ CO2^2      -1.284e-05   1.31e-05     -0.982      0.328     -3.88e-05  1.31e-05
+ ==============================================================================
+ Omnibus:                        0.571   Durbin-Watson:                   1.130
+ Prob(Omnibus):                  0.752   Jarque-Bera (JB):                0.584
+ Skew:                          -0.173   Prob(JB):                        0.747
+ Kurtosis:                       2.871   Cond. No.                     1.59e+07
+ ==============================================================================
+ 
+ Warnings:
+ [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+ [2] The condition number is large, 1.59e+07. This might indicate that there are
+ strong multicollinearity or other numerical problems.
+~~~
+{: .output}
 
 ![png](../fig/pandas_21_2.png)
