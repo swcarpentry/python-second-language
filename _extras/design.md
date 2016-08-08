@@ -4,6 +4,12 @@ title: "Lesson Design"
 permalink: /design/
 ---
 
+## Contents
+{:.no_toc}
+
+* Jekyll will replace this line with an auto-generated table of contents.
+{:toc}
+
 ## Process Used
 
 This lesson was developed using a slimmed-down variant of the "Understanding by Design" process.
@@ -136,7 +142,9 @@ Learners can:
 *   Exercises: 10 min
     *   Calculate average of sequence of random values
 
-### Coffee (10:20): 15 min
+### Coffee (10:20)
+
+*   Break: 15 min
 
 ### Writing Functions (10:35)
 
@@ -174,7 +182,9 @@ Learners can:
 
 ### Summary (11:50): 10 min
 
-### Lunch (12:00): 60 min
+### Lunch (12:00)
+
+*   Break: 60 min
 
 ### Pandas (13:00)
 
@@ -203,7 +213,9 @@ Learners can:
 *   Exercises: 15 min
     *   Turn invasion percolation into a command-line application
 
-### Coffee (14:20): 15 min
+### Coffee (14:20)
+
+*   Coffee: 15 min
 
 ### Testing (14:35)
 
