@@ -77,7 +77,8 @@ Learners will know that...
 
 ### Summative Assessment
 
-*   FIXME
+*   Mid-point: sort files in a directory into groups by size
+*   Final: Download and process data set from the web
 
 ### Skills
 
@@ -154,6 +155,14 @@ Learners can:
 *   Exercises: 10 min
     *   Add a few assertions to some functions
 
+### Profiling (11:30)
+
+*   Teaching: 10 min
+    *   Sampling vs. instrumenting
+*   Exercises: 10 min
+    *   Profile two versions of invasion percolation
+    *   One uses dictionaries, which haven't yet been introduced...
+
 ### Dictionaries (11:10)
 
 *   Teaching: 10 min
@@ -161,14 +170,7 @@ Learners can:
     *   Need for immutable keys
     *   Tuples
 *   Exercises: 10 min
-    *   FIXME
-
-### Profiling (11:30)
-
-*   Teaching: 10 min
-    *   Sampling vs. instrumenting
-*   Exercises: 10 min
-    *   Profile two versions of invasion percolation
+    *   Sort files in a directory into groups by size
 
 ### Summary (11:50): 10 min
 
