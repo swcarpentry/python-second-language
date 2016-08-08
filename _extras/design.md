@@ -6,9 +6,22 @@ permalink: /design/
 
 ## Process Used
 
-This lesson was designed using the process described in the [Python gapminder lesson][gapminder].
+This lesson was developed using a slimmed-down variant of the "Understanding by Design" process.
+The main sections are:
 
-## Stage 0 - Assumptions
+1.  Assumptions about audience, time, etc.
+
+2.  Desired results:
+    *   Overall goals
+    *   Summative assessments at half-day granularity
+    *   What learners will be able to do, what they will know, etc.
+
+3.  Learning plan
+    *   Each episode has a heading that summarizes what will be covered,
+        then estimates time that will be spent on teaching and on exercises.
+    *   The exercises are outlined to make expectations concrete.
+
+## Stage 1 - Assumptions
 
 *   Audience
     *   Graduate students and research software engineers in numerate disciplines from cosmology to economics
@@ -19,83 +32,199 @@ This lesson was designed using the process described in the [Python gapminder le
         *   Familiar with basic Unix shell commands (cd, ls, rm) and concepts (home directory, path)
     *   But have not programmed in Python before (or if they have, they've only dabbled)
 *   Constraints
-    *   One full day 09:00-16:00 (05:30 teaching time, 1:00 lunch, 0:30 for two coffee breaks)
+    *   One full day 09:00-16:00
+        *   06:30 teaching time
+        *   1:00 for lunch
+        *   0:30 total for two coffee breaks
     *   Learners use native installs on their own machines
         *   May connect to a cloud resource at their own discretion, but they have to set it up
-    *   No dependence on other Carpentry modules
-        *   In particular, must not require knowledge of version control
+    *   Assume knowledge of the Unix shell but *not* of version control
     *   Use the Jupyter Notebook
         *   Authentic tool
         *   There isn't really an alternative
         *   And means that even people who have seen a bit of Python before will probably learn something
-*   Examples
-    *   Use [ipythonblocks][blocks] and invasion percolation to recapitulate basics (loops, conditionals, functions)
-    *   Write unit tests for invasion percolation
-    *   Use [turtle graphics][turtle] to illustrate object-oriented programming
-        *   Right now, that means running from the command line...
-    *   FIXME: how to motivate NumPy?
-    *   FIXME: how to motivate Pandas?
-    *   Use CSV data from the web to motivate web programming
-        *   <http://climatedataapi.worldbank.org/climateweb/rest/v1/country/cru/tas/year/CAN.csv>
 *   Exercises will mostly *not* be "write this code from scratch"
     *   Want lots of short exercises that can reliably be finished in allotted time
     *   So use MCQs, fill-in-the-blanks, Parsons Problems, "tweak this code", etc.
-*   Lesson materials
-    *   Notes for instructors and self-study will be written in Markdown
-        *   We've tried writing/maintaining lessons as Notebooks...
-    *   Learners will be provided with one Notebook per episode containing starting points for exercises
+*   Running Examples
+    *   Morning: invasion percolation
+    *   Afternoon: data analysis
 
-## Stage 1 - Desired Results
-
-### Goals (Summative Assessment)
-
-*   Basics: variables, for loops, conditionals, lists, functions, line I/O
-    *   Modify invasion percolation step by step
-*   Testing
-    *   Unit tests for invasion percolation
-*   Dictionaries (and JSON data)
-    *   Make invasion percolation more efficient
-*   Single-inheritance classes with method overrides
-    *   Visualize a simple N-body simulation
-*   NumPy
-    *   Image manipulation (?)
-*   Pandas
-    *   Analyze CSV data
-*   The `requests` library for fetching data (but not authentication)
-    *   FIXME
+## Stage 2 - Desired Results
 
 ### Essential Questions
 
 How do I...
 
-*   ...read, analyze, and visualize a tabular data set?
-*   ...check and process multiple data sets?
+*   ...express common operations (loops, conditionals, aggregate data structures) in Python?
 *   ...break a program into functions?
-*   ...break a program into classes?
-*   ...check that it's working correctly?
+*   ...write unit tests for Python programs?
+*   ...use data structures make programs simpler and more efficient?
+*   ...work with matrices?
+*   ...analyze tabular data?
+*   ...get data from the web?
 
-### Learners Will Be Able To...
+### Concepts
 
-*   Run code saved in a file from the Unix shell
-*   Run code interactively in the Jupyter Notebook
-*   Create, index, and slice lists
-*   Create and index dictionaries
-*   Call built-in functions
-*   Use `help` and online documentation
-*   Import code from libraries
-*   Read tabular data into arrays or data frames
-*   Do collective operations on arrays and data frames
-*   Create simple plots of data in arrays and data frames
-*   Interpret common error messages
-*   Create unit tests for discrete (integer) problems
-*   Write non-recursive functions taking a variable number of named parameters
-*   Download data from the web via URLs
-*   Create single-inheritance class hierarchies with method overriding
+Learners will know that...
 
-## Stage 2 - Learning Plan
+*   ...Python is a dynamic imperative language.
+*   ...dictionaries can make programs simpler and more efficient at the same time.
+*   ...unit tests are easy to express and run using supporting libraries.
+*   ...matrices can be manipulated using MATLAB-style methods.
+*   ...tabular data can be manipulated using structures like R's data frames.
+*   ...fetching data from the web is not much more complicated than reading from local files.
 
-FIXME: break it down into learning chunks
+### Summative Assessment
 
-[blocks]: http://ipythonblocks.org/
-[gapminder]: https://swcarpentry.github.io/python-novice-gapminder/
-[turtle]: https://docs.python.org/3.5/library/turtle.html
+*   FIXME
+
+### Skills
+
+Learners can:
+
+1.  ...run code interactively in the Jupyter Notebook.
+2.  ...run code saved in a file from the Unix shell.
+3.  ...create, index, and slice lists.
+4.  ...create and index dictionaries.
+5.  ...call built-in functions.
+6.  ...use `help` and online documentation.
+7.  ...import code from libraries.
+8.  ...read tabular data into data frames.
+9.  ...do collective operations on data frames.
+10. ...create simple plots of data in data frames.
+11. ...interpret common error messages.
+12. ...create and run unit tests.
+13. ...write functions with default parameter values.
+14. ...download data from the web programmatically.
+
+## Stage 3 - Learning Plan
+
+### Basics (09:00)
+
+*   Teaching: 15 min
+    *   `int`, `float`, `str`, `bool`, `list`
+*   Exercises: 10 min
+    *   Immutable strings vs. mutable lists
+    *   Subscript games
+
+### Basic Control Flow (09:25)
+
+*   Teaching: 10 min
+    *   `for`
+    *   `if`/`else`
+    *   basic list and string methods
+*   Exercises: 10 min
+    *   Acronymize
+
+### File I/O (09:45)
+
+*   Teaching: 5 min
+    *   `open` and `close`
+    *   `for line in file`
+*   Exercises: 10 min
+    *   Count non-blank lines
+
+### Libraries (10:00)
+
+*   Teaching: 10 min
+    *   `import`
+    *   dot notation
+    *   `math` and `random`
+    *   `range`
+*   Exercises: 10 min
+    *   Calculate average of sequence of random values
+
+### Coffee (10:20): 15 min
+
+### Writing Functions (10:35)
+
+*   Teaching: 10 min
+    *   Basic definition
+    *   Default values for parameters
+    *   Scope rules
+*   Exercises: 10 min
+    *   Nested function calls
+    *   Aliasing of lists
+
+### Defensive Programming (10:55)
+
+*   Teaching: 5 min
+    *   The idea of `assert`
+*   Exercises: 10 min
+    *   Add a few assertions to some functions
+
+### Dictionaries (11:10)
+
+*   Teaching: 10 min
+    *   Basic operations
+    *   Need for immutable keys
+    *   Tuples
+*   Exercises: 10 min
+    *   FIXME
+
+### Profiling (11:30)
+
+*   Teaching: 10 min
+    *   Sampling vs. instrumenting
+*   Exercises: 10 min
+    *   Profile two versions of invasion percolation
+
+### Summary (11:50): 10 min
+
+### Lunch (12:00): 60 min
+
+### Pandas (13:00)
+
+*   Teaching: 20 min
+    *   Data frames
+    *   Reading CSV files
+    *   Aggregate operations
+    *   Indexing
+*   Exercises: 15 min
+    *   Statistics on GDP
+
+### Plotting (13:35)
+
+*   Teaching: 10 min
+    *   Basic line plots
+    *   Basic scatter plots
+*   Exercises: 10 min
+    *   Modify plots
+    *   Add extra lines
+
+### Command-Line Programming (13:55)
+
+*   Teaching: 10 min
+    *   `sys.argv`
+    *   `sys.stdin` and `sys.stdout`
+*   Exercises: 15 min
+    *   Turn invasion percolation into a command-line application
+
+### Coffee (14:20): 15 min
+
+### Testing (14:35)
+
+*   Teaching: 10 min
+    *   `py.test`
+*   Exercises: 15 min
+    *   Add tests to invasion percolation
+
+### Getting Data From the Web (15:00)
+
+*   Teaching: 15 min
+    *   The `requests` library
+    *   The `json` library
+    *   The `csv` library
+*   Exercises: 15 min
+    *   Pull down another data set
+
+### Next Steps (15:30)
+
+*   Teaching: 20 min
+    *   NumPy arrays
+    *   The SciPy ecosystem
+*   Exercises: 0 min
+    *   Because they'll be tired
+
+### Summary (15:50): 10 min
