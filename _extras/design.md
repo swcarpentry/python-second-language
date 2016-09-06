@@ -62,7 +62,7 @@ The main sections are:
 
 How do I...
 
-*   ...express common operations (loops, conditionals, aggregate data structures) in Python?
+*   ...express operations I'm already familiar with (loops, conditionals, lists) in Python?
 *   ...break a program into functions?
 *   ...write unit tests for Python programs?
 *   ...use data structures make programs simpler and more efficient?
@@ -97,9 +97,9 @@ Learners can:
 5.  ...call built-in functions.
 6.  ...use `help` and online documentation.
 7.  ...import code from libraries.
-8.  ...read tabular data into data frames.
-9.  ...do collective operations on data frames.
-10. ...create simple plots of data in data frames.
+8.  ...read tabular data into arrays and data frames.
+9.  ...do collective operations on arrays and data frames.
+10. ...create simple plots of data in arrays and data frames.
 11. ...interpret common error messages.
 12. ...create and run unit tests.
 13. ...write functions with default parameter values.
@@ -110,26 +110,28 @@ Learners can:
 ### Basics (09:00)
 
 *   Teaching: 15 min
+    *   Running the Jupyter Notebook
     *   `int`, `float`, `str`, `bool`, `list`
 *   Exercises: 10 min
     *   Immutable strings vs. mutable lists
     *   Subscript games
 
-### Basic Control Flow (09:25)
+### Control Flow (09:25)
 
 *   Teaching: 10 min
     *   `for`
     *   `if`/`else`
-    *   basic list and string methods
+    *   Basic list and string methods
+    *   `range`
 *   Exercises: 10 min
     *   Acronymize
 
 ### File I/O (09:45)
 
-*   Teaching: 5 min
+*   Teaching: 10 min
     *   `open` and `close`
     *   `for line in file`
-*   Exercises: 10 min
+*   Exercises: 5 min
     *   Count non-blank lines
 
 ### Libraries (10:00)
@@ -138,7 +140,6 @@ Learners can:
     *   `import`
     *   dot notation
     *   `math` and `random`
-    *   `range`
 *   Exercises: 10 min
     *   Calculate average of sequence of random values
 
@@ -151,8 +152,7 @@ Learners can:
     *   Default values for parameters
     *   Scope rules
 *   Exercises: 10 min
-    *   Nested function calls
-    *   Aliasing of lists
+    *   Extract functions from half page of code.
 
 ### Defensive Programming (10:55)
 
@@ -161,78 +161,77 @@ Learners can:
 *   Exercises: 10 min
     *   Add a few assertions to some functions
 
-### Profiling (11:30)
-
-*   Teaching: 10 min
-    *   Sampling vs. instrumenting
-*   Exercises: 10 min
-    *   Profile two versions of invasion percolation
-    *   One uses dictionaries, which haven't yet been introduced...
-
 ### Dictionaries (11:10)
 
-*   Teaching: 10 min
+*   Teaching: 15 min
     *   Basic operations
     *   Need for immutable keys
     *   Tuples
-*   Exercises: 10 min
-    *   Sort files in a directory into groups by size
+*   Exercises: 15 min
+    *   Sort lines in a file into groups by length.
 
-### Summary (11:50): 10 min
+### Profiling (11:40)
+
+*   Teaching: 10 min
+    *   Understanding a profile (cumulative time vs. per-call time)
+    *   Sampling vs. instrumenting
+*   Exercises: 10 min
+    *   Compare performance of unique word finders.
 
 ### Lunch (12:00): 60 min
 
-### Pandas (13:00)
+### NumPy Arrays (13:00)
 
-*   Teaching: 20 min
+*   Teaching: 15 min
+    *   Reading CSV files
+    *   Indexing
+    *   Aggregate operations
+    *   Converting arrays to images
+*   Exercises: 15 min
+    *   Construct images with blocked regions.
+
+### Pandas (13:30)
+
+*   Teaching: 15 min
     *   Data frames
     *   Reading CSV files
     *   Aggregate operations
     *   Indexing
 *   Exercises: 15 min
-    *   Statistics on GDP
+    *   Analyze temperature statistics.
 
-### Plotting (13:35)
+### Plotting (14:00)
 
-*   Teaching: 10 min
+*   Teaching: 15 min
     *   Basic line plots
     *   Basic scatter plots
-*   Exercises: 10 min
-    *   Modify plots
-    *   Add extra lines
+*   Exercises: 15 min
+    *   Modify plots used in teaching.
 
-### Command-Line Programming (13:55)
+### Coffee (14:30): 15 min
+
+### Command-Line Programming (14:45)
 
 *   Teaching: 10 min
     *   `sys.argv`
     *   `sys.stdin` and `sys.stdout`
 *   Exercises: 15 min
-    *   Turn invasion percolation into a command-line application
+    *   Add extra options to an existing program.
 
-### Coffee (14:20): 15 min
+### Testing (15:00)
 
-### Testing (14:35)
-
-*   Teaching: 10 min
+*   Teaching: 15 min
     *   `py.test`
-*   Exercises: 15 min
-    *   Add tests to invasion percolation
+*   Exercises: 10 min
+    *   Add more tests to overlap finder.
 
-### Getting Data From the Web (15:00)
+### Getting Data From the Web (15:25)
 
 *   Teaching: 15 min
     *   The `requests` library
     *   The `json` library
     *   The `csv` library
-*   Exercises: 15 min
-    *   Pull down another data set
-
-### Next Steps (15:30)
-
-*   Teaching: 20 min
-    *   NumPy arrays
-    *   The SciPy ecosystem
-*   Exercises: 0 min
-    *   Because they'll be tired
+*   Exercises: 10 min
+    *   Read and process another temperature data set.
 
 ### Summary (15:50): 10 min
