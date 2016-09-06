@@ -4,12 +4,6 @@ title: "Lesson Design"
 permalink: /design/
 ---
 
-## Contents
-{:.no_toc}
-
-* Jekyll will replace this line with an auto-generated table of contents.
-{:toc}
-
 ## Process Used
 
 This lesson was developed using a slimmed-down variant of the "Understanding by Design" process.
@@ -107,7 +101,7 @@ Learners can:
 
 ## Stage 3 - Learning Plan
 
-### Basics (09:00)
+### [Basics]({{page.root}}/01-basics/) (09:00)
 
 *   Teaching: 15 min
     *   Running the Jupyter Notebook
@@ -116,7 +110,7 @@ Learners can:
     *   Immutable strings vs. mutable lists
     *   Subscript games
 
-### Control Flow (09:25)
+### [Control Flow]({{page.root}}/02-flow/) (09:25)
 
 *   Teaching: 10 min
     *   `for`
@@ -126,7 +120,7 @@ Learners can:
 *   Exercises: 10 min
     *   Acronymize
 
-### File I/O (09:45)
+### [File I/O]({{page.root}}/03-file-io/) (09:45)
 
 *   Teaching: 10 min
     *   `open` and `close`
@@ -134,7 +128,7 @@ Learners can:
 *   Exercises: 5 min
     *   Count non-blank lines
 
-### Libraries (10:00)
+### [Libraries]({{page.root}}/04-lib/) (10:00)
 
 *   Teaching: 10 min
     *   `import`
@@ -143,9 +137,9 @@ Learners can:
 *   Exercises: 10 min
     *   Calculate average of sequence of random values
 
-### Coffee (10:20): 15 min
+### [Coffee]({{page.root}}/05-coffee/) (10:20): 15 min
 
-### Writing Functions (10:35)
+### [Writing Functions]({{page.root}}/06-functions/) (10:35)
 
 *   Teaching: 10 min
     *   Basic definition
@@ -154,14 +148,14 @@ Learners can:
 *   Exercises: 10 min
     *   Extract functions from half page of code.
 
-### Defensive Programming (10:55)
+### [Defensive Programming]({{page.root}}/07-defensive/) (10:55)
 
 *   Teaching: 5 min
     *   The idea of `assert`
 *   Exercises: 10 min
     *   Add a few assertions to some functions
 
-### Dictionaries (11:10)
+### [Dictionaries]({{page.root}}/08-dict/) (11:10)
 
 *   Teaching: 15 min
     *   Basic operations
@@ -170,7 +164,7 @@ Learners can:
 *   Exercises: 15 min
     *   Sort lines in a file into groups by length.
 
-### Profiling (11:40)
+### [Profiling]({{page.root}}/09-profile/) (11:40)
 
 *   Teaching: 10 min
     *   Understanding a profile (cumulative time vs. per-call time)
@@ -178,9 +172,9 @@ Learners can:
 *   Exercises: 10 min
     *   Compare performance of unique word finders.
 
-### Lunch (12:00): 60 min
+### [Lunch]({{page.root}}/10-lunch/) (12:00): 60 min
 
-### NumPy Arrays (13:00)
+### [NumPy Arrays]({{page.root}}/11-numpy/) (13:00)
 
 *   Teaching: 15 min
     *   Reading CSV files
@@ -190,7 +184,7 @@ Learners can:
 *   Exercises: 15 min
     *   Construct images with blocked regions.
 
-### Pandas (13:30)
+### [Pandas]({{page.root}}/12-pandas/) (13:30)
 
 *   Teaching: 15 min
     *   Data frames
@@ -200,7 +194,7 @@ Learners can:
 *   Exercises: 15 min
     *   Analyze temperature statistics.
 
-### Plotting (14:00)
+### [Plotting]({{page.root}}/13-plotting/) (14:00)
 
 *   Teaching: 15 min
     *   Basic line plots
@@ -208,9 +202,9 @@ Learners can:
 *   Exercises: 15 min
     *   Modify plots used in teaching.
 
-### Coffee (14:30): 15 min
+### [Coffee]({{page.root}}/14-coffee/) (14:30): 15 min
 
-### Command-Line Programming (14:45)
+### [Command-Line Programming]({{page.root}}/15-cmdline/) (14:45)
 
 *   Teaching: 10 min
     *   `sys.argv`
@@ -218,20 +212,19 @@ Learners can:
 *   Exercises: 15 min
     *   Add extra options to an existing program.
 
-### Testing (15:00)
+### [Testing]({{page.root}}/16-testing/) (15:10)
 
 *   Teaching: 15 min
     *   `py.test`
 *   Exercises: 10 min
     *   Add more tests to overlap finder.
 
-### Getting Data From the Web (15:25)
+### [Getting Data From the Web]({{page.root}}/17-web/) (15:35)
 
 *   Teaching: 15 min
     *   The `requests` library
     *   The `json` library
-    *   The `csv` library
 *   Exercises: 10 min
     *   Read and process another temperature data set.
 
-### Summary (15:50): 10 min
+### [Summary]({{page.root}}/18-wrap/) (16:00): 10 min
