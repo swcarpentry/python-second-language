@@ -3,9 +3,9 @@ title: "Wrap-Up"
 teaching: 0
 exercises: 10
 questions:
-- FIXME
+- "What have we learned?"
 objectives:
-- FIXME
+- "Provide feedback on the day."
 keypoints:
 - "Summarize the day's learnings."
 ---

@@ -3,12 +3,14 @@ title: "Defensive Programming"
 teaching: 5
 exercises: 10
 questions:
-- "FIXME"
+- "How can I make programs more robust?"
+- "How can I make programs easier to understand?"
 objectives:
-- "FIXME"
+- "Add `assert` statements to programs to check pre-conditions, post-conditions, and invariants."
 keypoints:
 - "Fail early, often, and meaningfully."
-- "Use `assert` to document and check intention."
+- "Use `assert` to check that programs are working correctly."
+- "Give `assert` statements meaningful error messages to help users."
 ---
 FIXME
 

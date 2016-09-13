@@ -3,9 +3,10 @@ title: "Pandas"
 teaching: 15
 exercises: 15
 questions:
-- "FIXME"
+- "How can I do statistical analysis of tabular data?"
 objectives:
-- "FIXME"
+- "Load tabular data with Pandas to create a data frame."
+- "Do statistical analysis on data stored in a data frame."
 keypoints:
 - "Use Pandas data frames to store tabular data for statistical analysis."
 - "Data frame operations make (most) loops unnecessary."
