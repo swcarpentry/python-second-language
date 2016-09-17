@@ -16,8 +16,86 @@ keypoints:
 - "Use file in `for` loop to process lines."
 - "Use `write` to add data to a file."
 ---
-FIXME
+## Use `open` to open files for reading or writing.
 
-## Exercises
+*   Arguments are a path and:
+    *   'r' for reading
+    *   'w' for writing (immediately erases existing contents)
+    *   'a' for appending
+*   Result is an object with methods for reading and writing.
+    *   `file.read()` reads the entire file.
+    *   `file.read(N)` reads up to that many bytes.
+*   Close files with `file.close`.
 
-*   Count non-blank lines in file.
+~~~
+reader = open('myfile.txt', 'r')
+data = reader.read()
+reader.close()
+print('file contains', len(data), 'bytes')
+~~~
+{: .python}
+~~~
+file contains 47189 bytes
+~~~
+{: .output}
+
+## Usually read text files with `for` loops.
+
+*   Automatically calls `file.readline`.
+
+~~~
+reader = open('myfile.txt', 'r')
+count = 0
+for line in reader:
+    count = count + 1
+reader.close()
+print('file contains', count, 'lines')
+~~~
+{: .python}
+~~~
+file contains 261 lines
+~~~
+{: .output}
+
+## Python preserves end-of-line newlines.
+
+*   By default, converts Windows '\r\n' to Unix '\n'.
+
+## Strip whitespace using string methods.
+
+*   Use `str.strip` to strip leading and trailing whitespace.
+    *   `'  abc '.strip()` is `'abc'`.
+*   Use `str.rstrip` or `str.lstrip` to strip space from right or left end only.
+*   All of these methods return new strings.
+    *   Because strings cannot be modified in place.
+
+~~~
+reader = open('myfile.txt', 'r')
+count = 0
+for line in reader:
+    line = line.strip()
+    if len(line) > 0:
+        count = count + 1
+reader.close()
+print('file contains', count, 'non-blank lines')
+~~~
+{: .python}
+~~~
+file contains 225 non-blank lines
+~~~
+{: .output}
+
+> ## Squeezing a File
+>
+> 1.  Write a small program that reads lines of text from a file called `input.dat`
+>     and writes those lines to a file called `output.dat`.
+>
+> 2.  Modify your program so that it only copies non-blank lines.
+>
+> 3.  Modify your program again so that a line is not copied
+>     if it is a duplicate of the line above it.
+>
+> 4.  Compare your implementation to your neighbor's.
+>     Did you interpret the third requirement (copying non-duplicated lines)
+>     the same way?
+{: .challenge}
