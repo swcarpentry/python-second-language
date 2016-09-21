@@ -186,3 +186,91 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 >
 > An example python script is given in `profiling_pi.py`.
 {: .challenge}
+
+## Profiling within IPython
+There are multiple ways to profile code within the IPython terminal depending how detailed you want to be
+These magic commands also work in Jupyter Notebooks
+
+* `%time` - time how long a statement takes to run
+~~~
+%time primes(100)
+~~~
+{: .python}
+~~~
+CPU times: user 21 µs, sys: 6 µs, total: 27 µs
+Wall time: 23.8 µs
+~~~
+{: .python}
+
+* `%timeit` - average time how long a cell takes to run over multiple runs
+~~~
+%timeit primes(100)
+~~~
+{: .python}
+~~~
+100000 loops, best of 3: 8.11 µs per loop
+~~~
+{: .python}
+*  `%prun`  - time each function in a script
+~~~
+%prun primes(100)
+~~~
+{: .python}
+~~~
+        4 function calls in 0.000 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 <ipython-input-26-4a302b84e1ce>:1(primes)
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 {range}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+~~~
+{: .python}
+*  `%lprun` - time each line in a function to run
+~~~
+%lprun -f primes primes(100)
+~~~
+{: .python}
+* `%lprun -f func1 -f func2 ....... <statement>` to profile multiple functions
+~~~
+Timer unit: 1e-06 s
+
+Total time: 0.000122 s
+File: <ipython-input-26-4a302b84e1ce>
+Function: primes at line 1
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     1                                           def primes(n):
+     2         1            2      2.0      1.6      if n==2:
+     3                                                   return [2]
+     4         1            1      1.0      0.8      elif n<2:
+     5                                                   return []
+     6                                           
+     7         1            4      4.0      3.3      s=range(3,n+1,2)
+     8         1            2      2.0      1.6      mroot = n ** 0.5
+     9         1            1      1.0      0.8      half=(n+1)//2-1
+    10         1            0      0.0      0.0      i=0
+    11         1            0      0.0      0.0      m=3
+    12                                           
+    13         5            4      0.8      3.3      while m <= mroot:
+    14         4            2      0.5      1.6          if s[i]:
+    15         3            3      1.0      2.5              j=(m*m-3)/2
+    16         3            4      1.3      3.3              s[j]=0
+    17        31           20      0.6     16.4              while j<half:
+    18        28           23      0.8     18.9                  s[j]=0
+    19        28           19      0.7     15.6                  j+=m
+    20         4            1      0.2      0.8          i=i+1
+    21         4            2      0.5      1.6          m=2*i+3
+    22        50           34      0.7     27.9      return [2]+[x for x in s if x]
+~~~
+{: .python}
+
+
+* Check the documentation by running the command with an `?` at the end for additional options
+~~~
+%lprun?
+~~~
+{: .python}
