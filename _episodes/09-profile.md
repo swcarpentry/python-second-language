@@ -188,6 +188,16 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 {: .challenge}
 
 ## Profiling within IPython
+> ## Loading line_profiler
+> `line_profiler` has to be loaded into the IPython/Jupyter notebook by running:
+>
+> ~~~
+> `%load_ext line_profiler`
+> ~~~
+> {: .source}
+{: .prereq}
+
+
 There are multiple ways to profile code within the IPython terminal depending how detailed you want to be
 These magic commands also work in Jupyter Notebooks
 
@@ -200,7 +210,7 @@ These magic commands also work in Jupyter Notebooks
 CPU times: user 21 µs, sys: 6 µs, total: 27 µs
 Wall time: 23.8 µs
 ~~~
-{: .python}
+{: .output}
 
 * `%timeit` - average time how long a cell takes to run over multiple runs
 ~~~
@@ -210,7 +220,7 @@ Wall time: 23.8 µs
 ~~~
 100000 loops, best of 3: 8.11 µs per loop
 ~~~
-{: .python}
+{: .output}
 *  `%prun`  - time each function in a script
 ~~~
 %prun primes(100)
@@ -227,7 +237,7 @@ Wall time: 23.8 µs
         1    0.000    0.000    0.000    0.000 {range}
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 ~~~
-{: .python}
+{: .output}
 *  `%lprun` - time each line in a function to run
 ~~~
 %lprun -f primes primes(100)
@@ -266,7 +276,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     21         4            2      0.5      1.6          m=2*i+3
     22        50           34      0.7     27.9      return [2]+[x for x in s if x]
 ~~~
-{: .python}
+{: .output}
 
 
 * Check the documentation by running the command with an `?` at the end for additional options
