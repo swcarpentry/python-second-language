@@ -44,7 +44,7 @@ keypoints:
     ~~~
     {: .source}
 
-*   This will start a Jupyter Notebook server and open your default web browser. 
+*   This will start a Jupyter Notebook server and open your default web browser.
 *   You can type code into the browser and see the result when the web page talks to the server.
 *   This has several advantages:
     *   You can easily type, edit, and copy and paste blocks of code.
@@ -61,7 +61,7 @@ FIXME: diagram
 >
 > *   The notebook file is stored in a format called JSON.
 > *   Just like a webpage, what's saved looks different from what you see in your browser.
-> *   But this format allows Jupyter to mix software (in several languages) with documentation 
+> *   But this format allows Jupyter to mix software (in several languages) with documentation
       and graphics, all in one file.
 {: .callout}
 
@@ -73,7 +73,7 @@ FIXME: diagram
 > ## Code vs. Text
 >
 > We often use the term "code" to mean
-> "the source code of software written in a language such as Python". 
+> "the source code of software written in a language such as Python".
 > A "code cell" in a Notebook is a cell that contains software;
 > a "text cell" is one that contains ordinary prose written for human beings.
 {: .callout}
@@ -95,7 +95,7 @@ FIXME: diagram
 
 ## Use the keyboard and mouse to select and edit cells.
 
-*   Pressing the "return" key turns the surround green to 
+*   Pressing the "return" key turns the surround green to
     signify edit mode and you can type into the cell.
 *   Because we want to be able to write many lines of code in a single cell,
     pressing the "return" key when the border is green moves the cursor to the next line in the cell
@@ -106,10 +106,10 @@ FIXME: diagram
 ## The Notebook will turn Markdown into pretty-printed documentation.
 
 *   Notebooks can also render [Markdown][markdown].
-    *   A simple plain-text format for writing lists, links, 
+    *   A simple plain-text format for writing lists, links,
         and other things that might go into a web page.
     *   Equivalently, a subset of HTML that looks like what you'd send in an old-fashioned email.
-*   Turn the current cell into a Markdown cell by entering 
+*   Turn the current cell into a Markdown cell by entering
     the control mode (esc/gray) and press the "M" key.
 *   `In [ ]:` will disappear to show it is no longer a code cell
     and you will be able to write in Markdown.
@@ -200,7 +200,7 @@ create new paragraphs.
 [Create links](http://software-carpentry.org) with `[...](...)`.
 Or use [named links][data_carpentry].
 
-[links]: http://datacarpentry.org
+[data_carpentry]: http://datacarpentry.org
 ~~~
 {: .source}
   </div>
