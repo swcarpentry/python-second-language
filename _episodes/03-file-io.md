@@ -85,16 +85,25 @@ file contains 225 non-blank lines
 ~~~
 {: .output}
 
-> ## Using `with` to guarantee a file is `close`d
+> ## Using `with` to Guarantee a File is Closed
+>
 > It is good practice to `close` a file after you have opened it.
 > You can use the `with` keyword in Python to ensure this:
 >
 > ~~~
 > with open('myfile.txt', 'r') as reader:
->   data = reader.read()
+>     data = reader.read()
 > print('file contains', len(data), 'bytes')
 > ~~~
 > {: .python}
+>
+> The `with` statement has two parts:
+> the expression to execute (such as opening a file)
+> and the variable that stores its result (in this case, `reader`).
+> At the end of the `with` block,
+> the file that was assigned to `reader` will automatically be closed.
+> `with` statements can be used with other kinds of objects
+> to achieve similar effects.
 {: .callout}
 
 > ## Squeezing a File
