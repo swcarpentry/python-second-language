@@ -85,6 +85,18 @@ file contains 225 non-blank lines
 ~~~
 {: .output}
 
+> ## Using `with` to guarantee a file is `close`d
+> It is good practice to `close` a file after you have opened it.
+> You can use the `with` keyword in Python to ensure this:
+>
+> ~~~
+> with open('myfile.txt', 'r') as reader:
+>   data = reader.read()
+> print('file contains', len(data), 'bytes')
+> ~~~
+> {: .python}
+{: .callout}
+
 > ## Squeezing a File
 >
 > 1.  Write a small program that reads lines of text from a file called `input.dat`
