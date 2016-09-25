@@ -185,6 +185,20 @@ for m in masses:
 > {: .python}
 >
 > so it is perfectly clear to a reader (and to Python) what you really mean.
+>
+> One more thing: in Python, comparisons can be chained; for example,
+>
+> ~~~
+> 2 < mass[i] <= 5
+> ~~~
+> {: .python}
+>
+> is equivalent to
+>
+> ~~~
+> 2 < mass[i] and mass[i] <= 5
+> ~~~
+> {: .python}
 {: .callout}
 
 > ## Reversing a String
@@ -265,7 +279,7 @@ for m in masses:
 >    *without* running it.
 > 2. Run the code and read the error message.
 >    What type of `NameError` do you think this is?
->    Is it a string with no quotes, a misspelled variable, or a 
+>    Is it a string with no quotes, a misspelled variable, or a
 >    variable that should have been defined but was not?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.
