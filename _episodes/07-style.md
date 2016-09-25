@@ -69,10 +69,13 @@ average(values)
 > and end with three matching characters.
 >
 > ~~~
-> """This string spans
-> multiple lines.
+> """This string spans multiple lines.
 >
-> Blank lines are allowed."""
+> Blank lines are allowed. For documentation, typically a first line
+> summarizes the functionality, and a blank line separates that summary
+> from the remainder. The ending three quote characters, in the case of a
+> long documentation string, are typically on their own line.
+> """
 > ~~~
 > {: .python}
 {: .callout}
