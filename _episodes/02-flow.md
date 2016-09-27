@@ -1,7 +1,7 @@
 ---
 title: "Control Flow"
 teaching: 10
-exercises: 10
+exercises: 20
 questions:
 - "How do I repeat operations?"
 - "How do I make decisions?"

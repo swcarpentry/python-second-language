@@ -1,7 +1,7 @@
 ---
 title: "Dictionaries"
 teaching: 15
-exercises: 15
+exercises: 20
 questions:
 - "How can I store and manipulate non-rectangular data?"
 objectives:

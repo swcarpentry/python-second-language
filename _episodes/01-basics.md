@@ -1,7 +1,7 @@
 ---
 title: "Basics"
 teaching: 20
-exercises: 15
+exercises: 25
 questions:
 - "How do I run Python programs?"
 - "What are Python's basic data types?"

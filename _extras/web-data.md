@@ -1,4 +1,5 @@
 ---
+layout: episode
 title: "Getting Data from the Web"
 teaching: 15
 exercises: 10

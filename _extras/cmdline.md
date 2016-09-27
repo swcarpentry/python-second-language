@@ -1,6 +1,7 @@
 ---
+layout: episode
 title: "Command-Line Programming"
-teaching: 10
+teaching: 15
 exercises: 15
 questions:
 - "How can I write command-line utilities in Python?"

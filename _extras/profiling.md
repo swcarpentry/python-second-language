@@ -1,7 +1,8 @@
 ---
+layout: episode
 title: "Profiling"
-teaching: 10
-exercises: 10
+teaching: 15
+exercises: 15
 questions:
 - "Why is my program so slow?"
 objectives:

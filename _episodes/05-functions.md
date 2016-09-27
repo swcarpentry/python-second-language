@@ -1,7 +1,7 @@
 ---
 title: "Writing Functions"
-teaching: 10
-exercises: 10
+teaching: 15
+exercises: 20
 questions:
 - "How can I make code more readable?"
 - "How can I make code reusable?"

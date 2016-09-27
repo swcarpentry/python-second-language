@@ -1,7 +1,7 @@
 ---
 title: "NumPy Arrays"
-teaching: 15
-exercises: 15
+teaching: 20
+exercises: 20
 questions:
 - "How can I store and manipulate arrays?"
 - "How can I do linear algebra?"
