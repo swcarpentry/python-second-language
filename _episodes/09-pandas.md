@@ -11,7 +11,38 @@ keypoints:
 - "Use Pandas data frames to store tabular data for statistical analysis."
 - "Data frame operations make (most) loops unnecessary."
 ---
-FIXME
+
+## What is a data frame? 
+
+
+## Loading tabular data with pandas
+pd.read_csv("filename")
+
+A quick look at your data frame 
+.shape()
+.head() 
+.tail()
+.describe() 
+
+## Referencing Columns  
+
+temperature_data[""] or temperature_data.""
+
+
+## Aggregate operations 
+.sum() 
+.mean()
+.std()
+.min()
+.max()
+.count()
+
+
+## indexing 
+.set_index()
+.loc()
+.iloc()
+.ix()
 
 ## Exercises
 
