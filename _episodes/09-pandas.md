@@ -17,14 +17,14 @@ keypoints:
 
 ## Loading tabular data with pandas
 
-Before we load our csv into a data frame, we need to import the Pandas library. A common alias for Pandas is pd and we will use that for our examples. 
+Before we load our csv into a data frame, we need to import the Pandas library. A common alias for Pandas is `pd` and we will use that for our examples. 
 
 ~~~
 import pandas as pd
 ~~~
 {: .python}
 
-To load your csv into a pandas data frame, you can use the .read_csv() method. [.read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) has a lot of potential parameters but for example we will simply pass .read_csv() the file name, which is located in the same folder as our Jupyter Notebook. 
+To load your csv into a Pandas data frame, you can use the .read_csv() method. [.read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) has a lot of potential parameters but for example we will simply pass .read_csv() the file name, which is located in the same folder as our Jupyter Notebook. 
 
 ~~~
 temperature_data = pd.read_csv("temperature.csv") 
@@ -33,7 +33,7 @@ temperature_data = pd.read_csv("temperature.csv")
 
 ## Spend a few minutes reviewing your data 
 
-It is a good idea to ensure your data frame loaded correctly. Thankfully, pandas has a few built in methods to help - shape, .head(), .tail(), and .describe(). The shape method will return a tuple that has the number of rows in the first position and the number of columns in the second position. In our example our data frame has 135 rows and 3 columns. Methods .head() and .tail() return the first 5 rows and the last 5 rows respectively. Finally, .describe() will return a variety of things depending on the data type. For numeric data types, like our example, it includes count, mean, standard deviation, minimum, quartiles, and the maximum. For object types it will return count, unique, most common, and frequency of the most common. Additionally, timestamps will also include the first and last item. 
+It is a good idea to ensure your data frame loaded correctly. Thankfully, Pandas has a few built in methods to help - shape, .head(), .tail(), and .describe(). The shape method will return a tuple that has the number of rows in the first position and the number of columns in the second position. In our example our data frame has 135 rows and 3 columns. Methods .head() and .tail() return the first 5 rows and the last 5 rows respectively. Finally, .describe() will return a variety of things depending on the data type. For numeric data types, like our example, it includes count, mean, standard deviation, minimum, quartiles, and the maximum. For object types it will return count, unique, most common, and frequency of the most common. Additionally, timestamps will also include the first and last item. 
 
 ~~~
 print("The shape of our data frame", temperature_data.shape)
