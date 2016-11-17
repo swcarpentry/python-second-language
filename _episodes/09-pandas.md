@@ -12,8 +12,9 @@ keypoints:
 - "Data frame operations make (most) loops unnecessary."
 ---
 
-## What is a data frame? 
+## What is a dataframe? 
 
+A dataframe is conceptually similar to a spreadsheet. It is two dimensional with columns and rows. Columns have labels, similar to the first row of a spreadsheet, for accessing content and similarly rows are indexed by number. Dataframes can be very powerful and are great for data exploration and analysis. 
 
 ## Loading tabular data with pandas
 
