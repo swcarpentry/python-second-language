@@ -111,15 +111,33 @@ temperature_data.Year
 
 While both techniques are valid, for this lesson I'm going to use the temperature_data["Year"] sytax. 
 
+## Aggregate operations
 
-## Aggregate operations 
-.sum() 
-.mean()
-.std()
-.min()
-.max()
-.count()
+There are a number of aggregate operations that can be very useful for doing some quick analysis and verification of your dataset. They are .count(), .max(), .min(), .std(), .mean(), and .sum(). These functions works as one might anticipate.
 
+~~~
+# Let's count the number of values in our year column
+temperature_data["Year"].count()
+~~~
+{: .python}
+
+~~~
+# The max and min year 
+print(temperature_data["Year"].max())
+print(temperature_data["Year"].min())
+~~~
+{: .python}
+
+
+~~~
+# The standard diviation, mean, and sum
+print(temperature_data["Annual_Mean"].std())
+print(temperature_data["Annual_Mean"].mean())
+print(temperature_data["Annual_Mean"].sum())
+~~~
+{: .python}
+
+While this might not be the most interesting data analysis, these examples do show the methods functionality and use. 
 
 ## indexing 
 .set_index()
