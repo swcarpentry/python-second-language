@@ -76,7 +76,40 @@ max    2014.000000     0.670000     0.610000
 
 ## Referencing Columns  
 
-temperature_data[""] or temperature_data.""
+Pandas offers two different ways to access data in a column. These syntanicallyn simimlar ways can have their respective benefits. However, to help with readibility it is generally a good idea to use the same method throughout your code.
+
+Before we start selecting individual columns, let's take a look at our column labels. 
+
+~~~
+temperature_data.columns
+~~~
+{: .python}
+~~~
+
+We can also look at our indexes with something very similar
+
+~~~
+temperature_data.index
+~~~
+{: .python}
+
+While not particularly useful in this example, there are cases when knowing the indexes can be very valuable.
+
+Now that we know our indexes and columns we can start exploring our data a bit more. Let's take a look at the years in our dataframe.
+
+~~~
+temperature_data["Year"]
+~~~
+{: .python}
+
+We can also use this syntax
+
+~~~
+temperature_data.Year
+~~~
+{: .python}
+
+While both techniques are valid, for this lesson I'm going to use the temperature_data["Year"] sytax. 
 
 
 ## Aggregate operations 
