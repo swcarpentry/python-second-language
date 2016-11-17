@@ -76,7 +76,7 @@ max    2014.000000     0.670000     0.610000
 
 ## Referencing Columns  
 
-Pandas offers two different ways to access data in a column. These syntanicallyn simimlar ways can have their respective benefits. However, to help with readibility it is generally a good idea to use the same method throughout your code.
+Pandas offers two different ways to access data in a column. These syntactically similar ways can have their respective benefits. However, to help with readability it is generally a good idea to use the same method throughout your code.
 
 Before we start selecting individual columns, let's take a look at our column labels. 
 
@@ -109,7 +109,7 @@ temperature_data.Year
 ~~~
 {: .python}
 
-While both techniques are valid, for this lesson I'm going to use the temperature_data["Year"] sytax. 
+While both techniques are valid, for this lesson I'm going to use the temperature_data["Year"] syntax. 
 
 ## Aggregate operations
 
@@ -129,7 +129,7 @@ print(temperature_data["Year"].min())
 {: .python}
 
 ~~~
-# The standard diviation, mean, and sum
+# The standard deviation, mean, and sum
 print(temperature_data["Annual_Mean"].std())
 print(temperature_data["Annual_Mean"].mean())
 print(temperature_data["Annual_Mean"].sum())
@@ -140,7 +140,7 @@ While this might not be the most interesting data analysis, these examples do sh
 
 ## Indexing 
 
-Pandas supports some nice slicing features for dataframes that are commmon to Python generally.
+Pandas supports some nice slicing features for dataframes that are common to Python generally.
 
 For example if you wanted to look at the first five years of data
 
@@ -164,7 +164,7 @@ temperature_data[34:58]
 {: .python} 
 
 
-Properly using indexes can help you select data and analysis in a faster, slightly more logical way. Remember the results from our command temperature_data.index? It was a list of numbers from 0-134. Wouldn't it be nice of our years were actually our index? That would help us select data, say from 1882-1892 fairly easily (without having to think about the zero-index location for those years).
+Properly using indexes can help you select data and analysis in a faster, slightly more logical way. Remember the results from our command temperature_data.index? It was a list of numbers from 0-134. It would be nice if our years were actually our index labels? That would help us select data, say from 1882-1892 fairly easily (without having to think about the zero-index location for those years).
 
 To change our index we can use the .set_index method. 
 
@@ -189,21 +189,21 @@ temperature_data_idx.loc[1889:1921, "Annual_Mean"]
 ~~~
 {: .python}
 
-And we can add on our aggregator methods too.
+And we can add on our aggregate methods too.
 
 ~~~
 temperature_data_idx.loc[1889:1921, "Annual_Mean"].std()
 ~~~
 {: .python} 
 
-We can also use .iloc if we want slice data by index location (zero-based). For example if we wanted to look at the last 10 years in our dataset.
+We can also use .iloc if we want slice data by index location (zero-based). For example if we wanted to look at the last 10 years in our data set.
 
 ~~~
 temperature_data_idx.iloc[-10:]
 ~~~
 {: .python}
 
-Again we can select columns and add aggregator methods too. However, because we are selecting based on index location we will have to refer to our columns by their zero-indexed location.
+Again we can select columns and add aggregate methods too. However, because we are selecting based on index location we will have to refer to our columns by their zero-indexed location.
 
 ~~~
 temperature_data_idx.iloc[-10:, 1].mean()
@@ -217,7 +217,7 @@ temperature_data_idx.ix[1921:1937]
 ~~~
 {: .python}
 
-However, in a fun gotcha, when an index is interger based, like our current example, label based access is only supported for .ix because it is difficult for python to know if you're trying to access your data via the label or the integer location. But, there is a workaround for our situtation (using our previous dataframe for our example). 
+However, in a fun gotcha, when an index is integer based, like our current example, label based access is only supported for .ix because it is difficult for python to know if you're trying to access your data via the label or the integer location. But, there is a workaround for our situation (using our previous dataframe for our example). 
 
 ~~~
 temperature_data.ix[0:5]
