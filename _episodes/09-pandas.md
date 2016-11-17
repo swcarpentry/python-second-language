@@ -128,7 +128,6 @@ print(temperature_data["Year"].min())
 ~~~
 {: .python}
 
-
 ~~~
 # The standard diviation, mean, and sum
 print(temperature_data["Annual_Mean"].std())
@@ -139,11 +138,92 @@ print(temperature_data["Annual_Mean"].sum())
 
 While this might not be the most interesting data analysis, these examples do show the methods functionality and use. 
 
-## indexing 
-.set_index()
-.loc()
-.iloc()
-.ix()
+## Indexing 
+
+Pandas supports some nice slicing features for dataframes that are commmon to Python generally.
+
+For example if you wanted to look at the first five years of data
+
+~~~
+temperature_data[:5]
+~~~
+{: .python}
+
+Or the last five years
+
+~~~
+temperature_data[-5:]
+~~~
+{: .python}
+
+or some mix
+
+~~~
+temperature_data[34:58]
+~~~
+{: .python} 
+
+
+Properly using indexes can help you select data and analysis in a faster, slightly more logical way. Remember the results from our command temperature_data.index? It was a list of numbers from 0-134. Wouldn't it be nice of our years were actually our index? That would help us select data, say from 1882-1892 fairly easily (without having to think about the zero-index location for those years).
+
+To change our index we can use the .set_index method. 
+
+~~~
+temperature_data_idx = temperature_data.set_index("Year")
+~~~
+{: .python}
+
+With our newly indexed dataframe we can access slices of data by the our index labels using .loc and .ix. This is an improvement to having to know the index number (and with .iloc we haven't lost our ability to access our data via the index number). This all probably sounding a bit confusing, so let's look at each method and some examples.
+
+.loc is a label-based index selector. Here label-based is probably best understood as a string or text, instead of an index location. That means with our newly indexed dataframe we can quickly access data by year.
+
+~~~
+temperature_data_idx.loc[1889:1921]
+~~~
+{: .python}
+
+We can also select specific columns if we are interested 
+
+~~~
+temperature_data_idx.loc[1889:1921, "Annual_Mean"]
+~~~
+{: .python}
+
+And we can add on our aggregator methods too.
+
+~~~
+temperature_data_idx.loc[1889:1921, "Annual_Mean"].std()
+~~~
+{: .python} 
+
+We can also use .iloc if we want slice data by index location (zero-based). For example if we wanted to look at the last 10 years in our dataset.
+
+~~~
+temperature_data_idx.iloc[-10:]
+~~~
+{: .python}
+
+Again we can select columns and add aggregator methods too. However, because we are selecting based on index location we will have to refer to our columns by their zero-indexed location.
+
+~~~
+temperature_data_idx.iloc[-10:, 1].mean()
+~~~
+{: .python}
+
+Lastly there is .ix. .ix is mix of .loc and .iloc - that is it first looks for a label-based selector and then checks for an integer location.
+
+~~~
+temperature_data_idx.ix[1921:1937]
+~~~
+{: .python}
+
+However, in a fun gotcha, when an index is interger based, like our current example, label based access is only supported for .ix because it is difficult for python to know if you're trying to access your data via the label or the integer location. But, there is a workaround for our situtation (using our previous dataframe for our example). 
+
+~~~
+temperature_data.ix[0:5]
+~~~
+{: .python}
+
 
 ## Exercises
 
