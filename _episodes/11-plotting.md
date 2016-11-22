@@ -26,7 +26,13 @@ import matplotlib.pyplot as plt
 ~~~
 {: .python}
 
+To create a plot, the minimum requirement is to provide the data to be visualized as argument to the plot functions
 
+~~~
+dataValues = [1,2,3,5,7,11]
+plt.plot(dataValues)
+~~~
+{: .python}
 
 
 
