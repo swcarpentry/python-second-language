@@ -116,9 +116,79 @@ plt.show()
 > {: .python}
 {: .challenge}
 
-CHANGE GRAPH TYPE TO PLOT SCATTER PLOT
+## creating scatter plot
 
-PLOT MULTIPLE SERIES WITH LEGEND BOX
+Sometimes, a line plot creates an artificial connection among data points that might influence the visual perception. A scatter plot is a type of plot that simply visualizes the individual data point and lets viewers identify the potential connections by themselves. A scatter plot can be created by calling the `scatter` function.
+
+~~~
+plt.scatter(range(0,16), daily_prices["Open"])
+plt.title('Google stock between 11/01/2016 and 11/22/2016')
+plt.ylabel('Price')
+plt.xlabel('Date')
+plt.xticks(range(0,16), daily_prices["Date"], rotation='vertical')
+plt.show()
+~~~
+{: .python}
+
+As a scatter plot visualize individual data points on a graph, two arguments with equal length are needed to represents the x-coordinates and y-coordinates of the collection of points, respectively.
+
+## plotting multiple datasets
+
+With multiple data sets plotted on the same graph, different visual characteristics are needed for different sets, and legends that associate these visual cues with data sets' identities are also needed.
+
+In the example below, a graph comparing opening and closing prices of Google stock on the same day does provide any meaningful information without the differentiating visual characteristics
+
+~~~
+plt.scatter(range(0,16), daily_prices["Open"])
+plt.scatter(range(0,16), daily_prices["Close"])
+plt.title('Google stock between 11/01/2016 and 11/22/2016')
+plt.ylabel('Price')
+plt.xlabel('Date')
+plt.xticks(range(0,16), daily_prices["Date"], rotation='vertical')
+plt.show()
+~~~
+{: .python}
+
+By specifying the coloring scheme of different data sets, we have a better visual of the data. However, someone without the source code still cannot distinguish between the opening and closing prices (although they can clearly observe two separate data sets)
+
+~~~
+plt.scatter(range(0,16), daily_prices["Open"], color="red")
+plt.scatter(range(0,16), daily_prices["Close"], color="blue")
+plt.title('Google stock between 11/01/2016 and 11/22/2016')
+plt.ylabel('Price')
+plt.xlabel('Date')
+plt.xticks(range(0,16), daily_prices["Date"], rotation='vertical')
+plt.show()
+~~~
+{: .python}
+
+By adding `label` and `legend`, we can now distinguish between the data sets, but the default settings for `legend` and the placement of the legend box are not visually pleasing.
+
+~~~
+plt.scatter(range(0,16), daily_prices["Open"], color="red", label="Open")
+plt.scatter(range(0,16), daily_prices["Close"], color="blue", label="Close")
+plt.title('Google stock between 11/01/2016 and 11/22/2016')
+plt.ylabel('Price')
+plt.xlabel('Date')
+plt.xticks(range(0,16), daily_prices["Date"], rotation='vertical')
+plt.legend(loc='upper right')
+plt.show()
+~~~
+{: .python}
+
+Additional modifications to the arguments of the `legend` function call can be made to improve the quality of the plot. More specifically, we move the location of the legend box to the upper left corner of the graph and only use one scatter point in representing the legends.
+
+~~~
+plt.scatter(range(0,16), daily_prices["Open"], color="red", label="Open")
+plt.scatter(range(0,16), daily_prices["Close"], color="blue", label="Close")
+plt.title('Google stock between 11/01/2016 and 11/22/2016')
+plt.ylabel('Price')
+plt.xlabel('Date')
+plt.xticks(range(0,16), daily_prices["Date"], rotation='vertical')
+plt.legend(loc='upper left', scatterpoints = 1)
+plt.show()
+~~~
+{: .python}
 
 ## Exercises
 
